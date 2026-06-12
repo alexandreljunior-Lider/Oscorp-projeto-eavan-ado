@@ -1,0 +1,348 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  background: #020406;
+
+  color: white;
+
+  overflow: hidden;
+}
+
+.hero {
+  height: 100vh;
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+
+  inset: 0;
+
+  background-image: url("img/desktop.jpg");
+
+  background-size: cover;
+
+  background-position: center;
+
+  z-index: -3;
+
+  animation: zoom 15s infinite alternate;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.9),
+    rgba(230, 235, 232, 0.15),
+    rgba(0, 0, 0, 0.8)
+  );
+
+  z-index: -2;
+}
+
+/* LINHAS TECNOLOGICAS */
+
+.grid {
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(77, 80, 78, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(229, 230, 229, 0.08) 1px, transparent 1px);
+
+  background-size: 50px 50px;
+
+  mask-image: linear-gradient(to bottom, transparent, black);
+}
+
+/* NAV */
+
+.navbar {
+  position: absolute;
+
+  top: 30px;
+
+  width: 90%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.logo {
+  font-size: 32px;
+
+  font-weight: 900;
+
+  letter-spacing: 5px;
+
+  color: #e4ece7;
+
+  text-shadow: 0 0 20px #eefcf3;
+}
+
+.logo span {
+  display: block;
+
+  font-size: 11px;
+
+  letter-spacing: 6px;
+
+  color: white;
+}
+
+nav {
+  display: flex;
+
+  gap: 35px;
+}
+
+nav a {
+  color: white;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #eff8f3;
+
+  text-shadow: 0 0 15px #eefcf3;
+}
+
+.content {
+  width: 80%;
+
+  max-width: 900px;
+
+  padding: 45px;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(236, 243, 239, 0.4);
+
+  border-radius: 30px;
+
+  box-shadow: 0 0 40px rgba(233, 236, 235, 0.25);
+
+  animation: entrada 1s ease;
+}
+
+@keyframes entrada {
+  from {
+    opacity: 0;
+
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.tag {
+  display: inline-block;
+
+  padding: 10px 20px;
+
+  border-radius: 30px;
+
+  background: #e2e9e520;
+
+  border: 1px solid #e4ece7;
+
+  color: #f0f5f2;
+}
+
+h1 {
+  font-size: 70px;
+
+  line-height: 1;
+
+  margin: 25px 0;
+
+  text-shadow: 0 0 20px #0f0f0f;
+}
+
+.content p {
+  font-size: 22px;
+
+  color: #ddd;
+
+  line-height: 1.5;
+}
+
+.buttons {
+  margin-top: 35px;
+
+  display: flex;
+
+  gap: 20px;
+}
+
+button {
+  padding: 15px 40px;
+
+  border-radius: 40px;
+
+  border: none;
+
+  background: #eaeeeb;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow: 0 0 25px #f0f3f1;
+}
+
+.outline {
+  background: transparent;
+
+  color: white;
+
+  border: 1px solid #e8f0eb;
+
+  box-shadow: none;
+}
+
+/* CARDS */
+
+.cards {
+  position: absolute;
+
+  bottom: 40px;
+
+  display: flex;
+
+  gap: 20px;
+}
+
+.cards div {
+  width: 200px;
+
+  padding: 20px;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  backdrop-filter: blur(10px);
+
+  border: 1px solid #e9eeeb;
+
+  border-radius: 20px;
+
+  text-align: center;
+}
+
+.cards h3 {
+  color: #eef3f0;
+}
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+  .background {
+    background-image: url("img/tablet.jpg");
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .cards div {
+    width: 160px;
+  }
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+  .background {
+    background-image: url("img/mobile.jpg");
+  }
+
+  .navbar {
+    top: 20px;
+  }
+
+  .logo {
+    font-size: 25px;
+  }
+
+  .content {
+    width: 90%;
+
+    padding: 25px;
+
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 35px;
+  }
+
+  .content p {
+    font-size: 16px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .cards {
+    bottom: 15px;
+
+    flex-direction: column;
+  }
+
+  .cards div {
+    width: 250px;
+
+    padding: 12px;
+  }
+}
